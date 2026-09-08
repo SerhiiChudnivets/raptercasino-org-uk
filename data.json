@@ -1,7 +1,7 @@
 {
   "name": "raptercasino.org.uk",
   "site_name": "Rapter Casino: Best Games for Players from UK",
-  "html_head": "",
+  "html_head": "<link rel=\"canonical\" href=\"https://raptercasino.org.uk/en-gb/\">\n<link rel=\"alternate\" href=\"https://raptercasino.org.uk/\" hreflang=\"en\">\n<link rel=\"alternate\" href=\"https://raptercasino.org.uk/en-gb/\" hreflang=\"en-GB\">\n<meta property=\"og:locale\" content=\"en_GB\">\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:title\" content=\"title\">\n<meta property=\"og:description\" content=\"Explore Rapter Casino extensive slot library, live dealer games, exclusive bonuses, and secure UK.\">\n<meta property=\"og:url\" content=\"raptercasino.org.uk\">\n<meta property=\"og:site_name\" content=\"Rapter Casino\">\n<meta property=\"og:image\" content=\"https://raptercasino.org.uk//uploads/ad2c87ef3d79404a913c60c626949c9c.webp\">",
   "url": "raptercasino.org.uk",
   "template": "tupchiy",
   "language_code": "en",
@@ -259,9 +259,10 @@
       "question": "Final Thoughts on Rapter Casino"
     }
   ],
-  "_generated_at": "2026-09-08T15:44:59.629Z",
+  "_generated_at": "2026-09-08T15:48:08.520Z",
   "_version": "1.0.0",
+  "html_head_alt": "rapter baner",
   "content_alt": "rapter slot",
-  "_last_deploy": "2026-09-08T15:45:00.262Z",
-  "_deploy_trigger": "vgt56w"
+  "_last_deploy": "2026-09-08T15:48:09.085Z",
+  "_deploy_trigger": "sf5lnc"
 }
