@@ -65,10 +65,13 @@ interface PageData {
   hero_subtitle?: string
   heroSubtitle?: string
   hero_badge?: string
+  heroBadge?: string
   heroImage?: string | MediaFile | MediaFile[] | null
   hero_image?: string | MediaFile | MediaFile[] | null
   cta_text?: string
+  ctaText?: string
   cta_link?: string
+  tagline?: string
   faq_title?: string
   faqTitle?: string
   faq?: { id?: number; question: string; answer: string }[]
@@ -99,7 +102,9 @@ interface SiteData {
   hero_title?: string
   hero_subtitle?: string
   hero_badge?: string
+  heroBadge?: string
   cta_text?: string
+  ctaText?: string
   tagline?: string
   features_list?: string
   popup_text?: string
@@ -710,8 +715,9 @@ export default function HomepageTemplate({ page, site }: { page: PageData; site:
   const siteName = site.site_name || site.name || 'LuckySpin'
   const heroTitle = page.heroTitle || page.hero_title || site.heroTitle || site.hero_title || 'Get 200% Bonus'
   const heroSubtitle = page.heroSubtitle || page.hero_subtitle || site.heroSubtitle || site.hero_subtitle || 'Up to \u20AC1,000 + 100 Free Spins'
-  const heroBadge = page.hero_badge || site.hero_badge || 'Welcome Bonus'
-  const ctaText = page.cta_text || site.cta_text || 'Play Now'
+  const heroBadge = page.heroBadge || page.hero_badge || site.heroBadge || site.hero_badge || 'Welcome Bonus'
+  const ctaText = page.ctaText || page.cta_text || site.ctaText || site.cta_text || 'Play Now'
+  const tagline = page.tagline || site.tagline || 'Start your winning journey today with the best welcome offer in online gaming!'
   const popupText = page.popup_text || site.popup_text || 'Welcome Bonus: 100% up to $500 + 200 Free Spins!'
 
   const normalizeUrl = (url?: string) => {
@@ -1004,7 +1010,7 @@ export default function HomepageTemplate({ page, site }: { page: PageData; site:
                 </h1>
                 <p className="hero-subtitle">{heroSubtitle}</p>
                 <p className="hero-description">
-                  {page.tagline || site.tagline || 'Start your winning journey today with the best welcome offer in online gaming!'}
+                  {tagline}
                 </p>
               </div>
               <button
