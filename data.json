@@ -79,12 +79,12 @@
   "accent_color": "#d4af37",
   "main_background": "#080B1C",
   "secondary_background": "#0B132F",
-  "button_background": "#633DF2",
+  "button_background": "#F77000",
   "button_text_color": "#FFFFFF",
   "text_color": "#FFFFFF",
   "color_highlight_text": "#FFFFFF",
   "color_main_btn_text": "#FFFFFF",
-  "cta_background": "#633DF2",
+  "cta_background": "#F77000",
   "logo": {
     "url": "/uploads/347d45a6c02016f37ec6f6a53bc7ca51.webp",
     "alt": "rapter logo"
@@ -259,10 +259,10 @@
       "question": "Final Thoughts on Rapter Casino"
     }
   ],
-  "_generated_at": "2026-09-09T10:45:00.131Z",
+  "_generated_at": "2026-09-09T10:49:18.254Z",
   "_version": "1.0.0",
   "html_head_alt": "rapter baner",
   "content_alt": "rapter slot",
-  "_last_deploy": "2026-09-09T10:45:00.754Z",
-  "_deploy_trigger": "s12f5n"
+  "_last_deploy": "2026-09-09T10:49:18.875Z",
+  "_deploy_trigger": "fpz9p9"
 }
