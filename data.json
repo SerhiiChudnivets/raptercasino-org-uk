@@ -24,7 +24,7 @@
       "heroSubtitle": "Welcome Bonus",
       "heroBadge": "Rapter Casino — Claim Your Best Bonuses ",
       "ctaText": "Claim",
-      "tagline": " 100% match bonus up to €500",
+      "tagline": "100% match bonus up to €500",
       "heroImage": "/uploads/ad2c87ef3d79404a913c60c626949c9c.webp",
       "template": "homepage",
       "isHomepage": false,
@@ -163,7 +163,7 @@
   "hero_subtitle": "Welcome Bonus",
   "hero_badge": "Rapter Casino — Claim Your Best Bonuses ",
   "cta_text": "Claim",
-  "tagline": " 100% match bonus up to €500",
+  "tagline": "100% match bonus up to €500",
   "features_list": null,
   "footer_text": "© 2026. Rapter Casino. All rights reserved",
   "popup_text": "Bonus 100% up to €500",
@@ -359,10 +359,10 @@
       "question": "Final Thoughts on Rapter Casino"
     }
   ],
-  "_generated_at": "2026-09-16T09:44:51.295Z",
+  "_generated_at": "2026-09-16T09:48:16.772Z",
   "_version": "1.0.0",
   "html_head_alt": "rapter baner",
   "content_alt": "rapter slot",
-  "_last_deploy": "2026-09-16T09:44:51.896Z",
-  "_deploy_trigger": "pfbsnk"
+  "_last_deploy": "2026-09-16T09:48:17.376Z",
+  "_deploy_trigger": "nnrte"
 }
