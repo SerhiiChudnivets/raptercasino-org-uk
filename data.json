@@ -68,22 +68,22 @@
         {
           "link": "/play/",
           "logo": "/uploads/be95832195b9252e5b6f62af16470132.webp",
-          "name": "Weekly Bonus",
-          "Name": "Weekly Bonus",
+          "name": "Weekly Bonus 100% up to €1,000",
+          "Name": "Weekly Bonus 100% up to €1,000",
           "logo_alt": "Weekly Bonus"
         },
         {
           "link": "/play/",
           "logo": "/uploads/0ee3b1b6aa6fde1fcfd3ea22d32b202a.webp",
-          "name": "Reload Bonus",
-          "Name": "Reload Bonus",
+          "name": "Reload Bonus 100% up to €1,000",
+          "Name": "Reload Bonus 100% up to €1,000",
           "logo_alt": "Reload Bonus"
         },
         {
           "link": "/play/",
           "logo": "/uploads/94b7c61354bd80ea9dcdec4d7cc07103.webp",
-          "name": "Welcome Bonus",
-          "Name": "Welcome Bonus",
+          "name": "Welcome Bonus 100% up to €500",
+          "Name": "Welcome Bonus 100% up to €500",
           "logo_alt": "Welcome Bonus"
         }
       ],
@@ -317,22 +317,22 @@
     {
       "link": "/play/",
       "logo": "/uploads/be95832195b9252e5b6f62af16470132.webp",
-      "name": "Weekly Bonus",
-      "Name": "Weekly Bonus",
+      "name": "Weekly Bonus 100% up to €1,000",
+      "Name": "Weekly Bonus 100% up to €1,000",
       "logo_alt": "Weekly Bonus"
     },
     {
       "link": "/play/",
       "logo": "/uploads/0ee3b1b6aa6fde1fcfd3ea22d32b202a.webp",
-      "name": "Reload Bonus",
-      "Name": "Reload Bonus",
+      "name": "Reload Bonus 100% up to €1,000",
+      "Name": "Reload Bonus 100% up to €1,000",
       "logo_alt": "Reload Bonus"
     },
     {
       "link": "/play/",
       "logo": "/uploads/94b7c61354bd80ea9dcdec4d7cc07103.webp",
-      "name": "Welcome Bonus",
-      "Name": "Welcome Bonus",
+      "name": "Welcome Bonus 100% up to €500",
+      "Name": "Welcome Bonus 100% up to €500",
       "logo_alt": "Welcome Bonus"
     }
   ],
@@ -359,10 +359,10 @@
       "question": "Final Thoughts on Rapter Casino"
     }
   ],
-  "_generated_at": "2026-09-09T10:53:02.575Z",
+  "_generated_at": "2026-09-16T09:44:51.295Z",
   "_version": "1.0.0",
   "html_head_alt": "rapter baner",
   "content_alt": "rapter slot",
-  "_last_deploy": "2026-09-09T10:53:03.368Z",
-  "_deploy_trigger": "83ggbd"
+  "_last_deploy": "2026-09-16T09:44:51.896Z",
+  "_deploy_trigger": "pfbsnk"
 }
