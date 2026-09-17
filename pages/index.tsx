@@ -6,13 +6,17 @@ interface MediaFile {
   id?: number
   name?: string
   url?: string
+  alt?: string
+  alternativeText?: string
   formats?: any
 }
 
 interface Slot {
   id?: number
   Name?: string
+  name?: string
   logo?: MediaFile | MediaFile[] | string
+  logo_alt?: string
   link?: string
 }
 
@@ -38,7 +42,9 @@ interface MenuItem {
 interface Bonus {
   id?: number
   Name?: string
+  name?: string
   logo?: MediaFile | MediaFile[] | string
+  logo_alt?: string
   link?: string
 }
 
@@ -51,6 +57,8 @@ interface FaqItem {
 interface FooterImage {
   id?: number
   link?: string
+  alt?: string
+  image_alt?: string
   image?: string | MediaFile | MediaFile[] | null
 }
 
@@ -76,7 +84,7 @@ interface CasinoData {
   hero_subtitle?: string
   hero_badge?: string
   cta_text?: string
-  logo?: { url: string; name?: string } | null
+  logo?: { url: string; name?: string; alt?: string; alternativeText?: string } | null
   accent_color?: string
   tagline?: string
   features_list?: string
@@ -1388,10 +1396,17 @@ export default function TupchiyTemplate() {
     if (typeof media === 'object' && 'url' in media) return media.url || ''
     return ''
   }
+  const getMediaAlt = (media?: MediaFile | MediaFile[] | string | null, fallback = '') => {
+    if (!media) return fallback
+    if (typeof media === 'string') return fallback
+    if (Array.isArray(media)) return getMediaAlt(media[0], fallback)
+    return media.alt || media.alternativeText || media.name || fallback
+  }
   const footerImages = (Array.isArray(data.footer_images) ? data.footer_images : data.footerImages || [])
-      .map((item) => ({
+      .map((item, index) => ({
         ...item,
         imageUrl: getMediaUrl(item.image || undefined),
+        imageAlt: item.alt || item.image_alt || getMediaAlt(item.image || undefined, `Footer certification ${index + 1}`),
       }))
       .filter((item) => item.imageUrl)
 
@@ -1450,7 +1465,7 @@ export default function TupchiyTemplate() {
             <div className="header-content">
               <div className="logo">
                 <a href={normalizeUrl(urlSite)}>
-                  <img src={getMediaUrl(data.logo)} alt={siteName} className="logo-image"/>
+                  <img src={getMediaUrl(data.logo)} alt={getMediaAlt(data.logo, siteName)} className="logo-image"/>
                 </a>
               </div>
               <nav className={`nav-bar ${isMobileMenuOpen ? 'open' : ''}`}>
@@ -1607,7 +1622,7 @@ export default function TupchiyTemplate() {
                       return (
                           <div key={slot.id || index} className="slot-card">
                             {logoUrl ? (
-                                <img src={logoUrl} alt={slot.Name || `Slot ${index + 1}`} className="slot-image" />
+                                <img src={logoUrl} alt={slot.logo_alt || getMediaAlt(slot.logo, slot.Name || slot.name || `Slot ${index + 1}`)} className="slot-image" />
                             ) : (
                                 <div className="slot-image" style={{ background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '3rem' }}>
                                   🎰
@@ -1670,7 +1685,7 @@ export default function TupchiyTemplate() {
                           {bonusLogo ? (
                               <img
                                   src={bonusLogo}
-                                  alt={bonus.Name || `Bonus ${index + 1}`}
+                                  alt={bonus.logo_alt || getMediaAlt(bonus.logo, bonus.Name || bonus.name || `Bonus ${index + 1}`)}
 
                               />
                           ) : (
@@ -1787,7 +1802,7 @@ export default function TupchiyTemplate() {
               <div className="footer-top">
                 <div className="logo">
                   <a href={normalizeUrl(urlSite)}>
-                    <img src={getMediaUrl(data.logo)} alt={siteName} className="logo-image"/>
+                    <img src={getMediaUrl(data.logo)} alt={getMediaAlt(data.logo, siteName)} className="logo-image"/>
                   </a>
                 </div>
 
@@ -1803,7 +1818,7 @@ export default function TupchiyTemplate() {
                           >
                             <img
                                 src={item.imageUrl}
-                                alt={`Footer certification ${index + 1}`}
+                                alt={item.imageAlt}
                                 className="footer-certification-image"
                             />
                           </a>
@@ -1867,7 +1882,7 @@ export default function TupchiyTemplate() {
                   <div className="logo">
                     <img
                         src={getMediaUrl(data.popup_logo)}
-                        alt="Logo"
+                        alt={getMediaAlt(data.popup_logo, 'Logo')}
                         className="logo-image"
                     />
                   </div>

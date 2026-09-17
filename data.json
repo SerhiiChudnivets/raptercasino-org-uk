@@ -88,9 +88,11 @@
         }
       ],
       "faq": [],
+      "globalSlotSetId": null,
       "websiteId": 150,
       "createdAt": {},
       "updatedAt": {},
+      "globalSlotSet": null,
       "popup_text": "Bonus 100% up to €500",
       "popup_logo": "/uploads/347d45a6c02016f37ec6f6a53bc7ca51.webp",
       "hero_title": "Rapter Casino",
@@ -359,10 +361,10 @@
       "question": "Final Thoughts on Rapter Casino"
     }
   ],
-  "_generated_at": "2026-09-16T10:08:22.654Z",
+  "_generated_at": "2026-09-17T08:13:40.487Z",
   "_version": "1.0.0",
   "html_head_alt": "rapter baner",
   "content_alt": "rapter slot",
-  "_last_deploy": "2026-09-16T10:08:23.260Z",
-  "_deploy_trigger": "5anlg8"
+  "_last_deploy": "2026-09-17T08:13:41.114Z",
+  "_deploy_trigger": "a41hb"
 }

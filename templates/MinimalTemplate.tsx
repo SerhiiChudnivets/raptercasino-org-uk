@@ -5,6 +5,8 @@ interface MediaFile {
   id?: number
   name?: string
   url?: string
+  alt?: string
+  alternativeText?: string
   formats?: any
 }
 
@@ -21,6 +23,8 @@ interface MenuItem {
 interface FooterImage {
   id?: number
   link?: string
+  alt?: string
+  image_alt?: string
   image?: string | MediaFile | MediaFile[] | null
 }
 
@@ -405,6 +409,13 @@ export default function MinimalTemplate({ page, site }: { page: PageData; site: 
     return ''
   }
 
+  const getMediaAlt = (media?: MediaFile | MediaFile[] | string | null, fallback = '') => {
+    if (!media) return fallback
+    if (typeof media === 'string') return fallback
+    if (Array.isArray(media)) return getMediaAlt(media[0], fallback)
+    return media.alt || media.alternativeText || media.name || fallback
+  }
+
   const normalizeUrl = (url?: string) => {
     if (!url) return '#'
     if (/^https?:\/\//i.test(url)) return url
@@ -548,7 +559,8 @@ export default function MinimalTemplate({ page, site }: { page: PageData; site: 
 
   const processedContent = page.content ? replaceVariables(page.content) : site.content ? replaceVariables(site.content) : ''
   const backgroundImage = getMediaUrl(page.heroImage || page.hero_image || site.heroImage || site.hero_image || site.main_background_img)
-  const popupLogo = getMediaUrl(page.popup_logo || site.popup_logo)
+  const popupLogoSource = page.popup_logo || site.popup_logo
+  const popupLogo = getMediaUrl(popupLogoSource)
   const popupText = page.popup_text || site.popup_text || page.tagline || site.tagline || ''
   const popupButtonText = page.get_bonus_btn_text || site.get_bonus_btn_text || ctaText
   const footerImagesSource = Array.isArray(page.footer_images) && page.footer_images.length > 0
@@ -559,7 +571,11 @@ export default function MinimalTemplate({ page, site }: { page: PageData; site: 
         ? site.footer_images
         : site.footerImages || []
   const footerImages = footerImagesSource
-    .map((item) => ({ ...item, imageUrl: getMediaUrl(item.image || undefined) }))
+    .map((item, index) => ({
+      ...item,
+      imageUrl: getMediaUrl(item.image || undefined),
+      imageAlt: item.alt || item.image_alt || getMediaAlt(item.image || undefined, `Footer certification ${index + 1}`),
+    }))
     .filter((item) => item.imageUrl)
 
   const dynamicStyles = `
@@ -601,7 +617,7 @@ export default function MinimalTemplate({ page, site }: { page: PageData; site: 
               <div className="logo">
                 <a href={normalizeUrl(urlSite)}>
                   {getMediaUrl(page.logo || site.logo) ? (
-                    <img src={getMediaUrl(page.logo || site.logo)} alt={siteName} className="logo-image" />
+                    <img src={getMediaUrl(page.logo || site.logo)} alt={getMediaAlt(page.logo, getMediaAlt(site.logo, siteName))} className="logo-image" />
                   ) : (
                     <span className="logo-text">{siteName}</span>
                   )}
@@ -716,7 +732,7 @@ export default function MinimalTemplate({ page, site }: { page: PageData; site: 
                 <div className="logo">
                   <a href={normalizeUrl(urlSite)}>
                     {getMediaUrl(page.logo || site.logo) ? (
-                      <img src={getMediaUrl(page.logo || site.logo)} alt={siteName} className="logo-image" />
+                      <img src={getMediaUrl(page.logo || site.logo)} alt={getMediaAlt(page.logo, getMediaAlt(site.logo, siteName))} className="logo-image" />
                     ) : (
                       <span className="logo-text">{siteName}</span>
                     )}
@@ -726,7 +742,7 @@ export default function MinimalTemplate({ page, site }: { page: PageData; site: 
                   {footerImages.length > 0 ? (
                     footerImages.map((item, index) => (
                       <a key={item.id || index} href={item.link || '#'} className="footer-certification-link" target="_blank" rel="nofollow">
-                        <img src={item.imageUrl} alt={`Footer certification ${index + 1}`} className="footer-certification-image" />
+                        <img src={item.imageUrl} alt={item.imageAlt} className="footer-certification-image" />
                       </a>
                     ))
                   ) : (
@@ -776,7 +792,7 @@ export default function MinimalTemplate({ page, site }: { page: PageData; site: 
               <div className="popup-content">
                 {popupLogo && (
                   <div className="logo">
-                    <img src={popupLogo} alt="Logo" className="logo-image" />
+                    <img src={popupLogo} alt={getMediaAlt(page.popup_logo, getMediaAlt(site.popup_logo, 'Logo'))} className="logo-image" />
                   </div>
                 )}
                 {popupText && <div className="popup-text">{popupText}</div>}
