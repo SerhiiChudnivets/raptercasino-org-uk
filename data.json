@@ -266,23 +266,13 @@
   "footer_images": [
     {
       "link": "/play/",
-      "image": "/uploads/6e4898443d8c7a6d3f85c8c699adf4b8.svg",
-      "image_alt": "visa"
+      "image": "/uploads/29ad6e8e1fc087f97738038aa420f4ea.svg",
+      "image_alt": "18+"
     },
     {
-      "link": "/play/",
-      "image": "/uploads/97884414b5bebb9e6c0331960aa5c71c.webp",
-      "image_alt": "mastercard"
-    },
-    {
-      "link": "/play/",
-      "image": "/uploads/2767b5abec611eeaecc8af4ad65c2a43.svg",
-      "image_alt": "btc"
-    },
-    {
-      "link": "/play/",
-      "image": "/uploads/c797aa08fa6f6915754a64505952550a.svg",
-      "image_alt": "giropay"
+      "link": "https://www.gamcare.org.uk/",
+      "image": "/uploads/1bfe3b454cda5ccf482e868ba2dfdc15.webp",
+      "image_alt": "gamcare"
     }
   ],
   "Slots": [
@@ -361,10 +351,10 @@
       "question": "Final Thoughts on Rapter Casino"
     }
   ],
-  "_generated_at": "2026-09-17T08:13:40.487Z",
+  "_generated_at": "2026-09-17T08:16:33.537Z",
   "_version": "1.0.0",
   "html_head_alt": "rapter baner",
   "content_alt": "rapter slot",
-  "_last_deploy": "2026-09-17T08:13:41.114Z",
-  "_deploy_trigger": "a41hb"
+  "_last_deploy": "2026-09-17T08:16:34.172Z",
+  "_deploy_trigger": "vq9ms"
 }
